@@ -35,7 +35,7 @@
     }
 
     .logo {
-      width: 120px;
+      width: 118px;
       height: auto;
     }
 
@@ -45,7 +45,7 @@
     }
 
     .menu-link {
-      color: white;
+      color: #112;
       text-decoration: none;
       font-size: 18px;
       font-weight: bold;
@@ -67,6 +67,17 @@
 
     .yellow {
       color: yellow;
+      cursor: pointer;
+    }
+
+    .finanzielle {
+      position: absolute;
+      top: 100vh;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      font-size: 28px;
+      color: black;
     }
 
     .description-section {
@@ -81,7 +92,7 @@
     }
 
     canvas {
-      max-width: 100%;
+      max-width: 90%;
       height: auto;
     }
 
@@ -101,7 +112,7 @@
 
     .button {
       background-color: yellow;
-      padding: 8px 30px;
+      padding: 4px 50px;
       color: black;
       border-radius: 8px;
       border: none;
@@ -137,9 +148,9 @@
     </div>
   </div>
 
-  <h1 class="headline">Wollen Sie ganz einfach <span class="yellow">Ihre Sparziele</span> erreichen?</h1>
+  <h1 class="headline">Wollen Sie ganz einfach <span class="yellow" onclick="scrollToSparziele()">Ihre Sparziele</span> erreichen?</h1>
   
-  <h2>Geben Sie Ihre finanziellen Daten ein!</h2>
+  <h2 class="finanzielle" id="sparziele">Geben Sie Ihre finanziellen Daten ein!</h2>
 
   <div class="description-section">
     <div class="half-width">
@@ -237,6 +248,11 @@
 
       budgetChart.data.datasets[0].data[3] = monatlichSparen;
       budgetChart.update();
+    }
+
+    function scrollToSparziele() {
+      const sparzieleSection = document.getElementById('sparziele');
+      sparzieleSection.scrollIntoView({ behavior: 'smooth' });
     }
   </script>
 </body>
